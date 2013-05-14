@@ -1,11 +1,12 @@
 
-
-
-
 <%= render 'common/search_form' %>
 
-<h2>Clientes</h2>
+<h2>Customers</h2>
+
+<div class="span12">
 
 <%= render 'customer' %>
 
-<%= link_to "Agregar Cliente", new_customer_path %>
+<%= link_to "Add Customer", new_customer_path, class: 'btn btn-large btn-success' %>
+
+</div>

@@ -49,9 +49,9 @@ class CustomersController < ApplicationController
     @customer = Customer.new
 
     if @customers.any?
-      flash.now[:success] = "Cliente encontrado"
+      flash[:notice] = "Customer found!"
     else
-      flash[:notice] = "Cliente no encontrado, agregalo"
+      flash[:success] = "Customer wasn't found, add it DUDE"
 
     end
 

@@ -1,5 +1,16 @@
-Nombre - <%= @product.name %><br>
-Precio - <%= @product.price %><br>
+<div class="span6">
 
-<br>
-<%= link_to "Volver", products_path %>
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+	</tr>
+
+	<tr>
+		<td><%= @product.name %></td>
+		<td><%= @product.price %></td>
+	</tr>
+</table>
+
+<%= link_to "Back", products_path, class: 'btn' %>
+</div>
