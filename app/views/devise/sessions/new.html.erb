@@ -1,10 +1,12 @@
-<div class="span4 hero-unit">
+
+<div class="offset4 span4 hero-unit">
 	<h2>Sign in</h2>
 
-	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	  <div><%= f.label :username %>
-	  <%= f.text_field :username, :autofocus => true %></div>
-
+	<%= form_for(resource, :as => resource_name, class: 'form-horizontal', :url => session_path(resource_name)) do |f| %>
+	  <div class="control-group">
+		  <div><%= f.label :username %>
+		  <%= f.text_field :username, :autofocus => true %></div>
+	  </div>
 	  <div><%= f.label :password %>
 	  <%= f.password_field :password %></div>
 
@@ -17,4 +19,3 @@
 
 	<%= render "devise/shared/links" %>
 </div>
-
