@@ -4,3 +4,5 @@ function ProductsCtrl($scope, $http) {
     console.log(data);
   });
 }
+
+ProductsCtrl.$inject = ['$scope', '$http'];
