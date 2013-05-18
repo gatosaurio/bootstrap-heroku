@@ -10,8 +10,8 @@ class ProductsController < ApplicationController
   def create
   	@product = current_user.products.build(params[:product])
   	if @product.save
-  		flash[:success] = "Producto Creado"
-  		redirect_to @product
+  		flash[:notice] = "Product created"
+  		redirect_to products_path
   	else
   		render 'new'
   	end

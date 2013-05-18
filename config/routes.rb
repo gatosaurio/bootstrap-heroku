@@ -1,10 +1,14 @@
 Adres::Application.routes.draw do
 
+  get "orders/new"
+
   resources :customers
 
   resources :products
 
   devise_for :users
+
+  resources :orders
 
   match '/search', to: "customers#search"
 

@@ -1,0 +1,41 @@
+<div class="span8">
+	<h2>Listing products</h2>
+
+	<input type="text" ng-model="search" placeholder="Search product">
+
+	<div ng-controller='ProductsCtrl'>
+	  <ul class="unstyled">
+	    <li class="products-list" ng-repeat='product in products | filter:search'>
+	    {{product.name}} - {{product.price}}$  <%= link_to "Add to order", '#', class: 'btn btn-mini btn-inverse'%>
+	  </ul>
+	</div>
+
+<%= link_to "Create Order", '#', class: 'btn btn-large btn-success'%>
+
+</div>
+
+<div class="span4">
+
+	<h3>Current Order</h3>
+	<p>(listing line items)</p>
+	<table class="table">
+		<tr>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Price</th>
+		</tr>
+		<tr>
+			<td>Product #1</td>
+			<td>1</td>
+			<td>23$</td>
+			<td><%= link_to 'Clear', '#', class: 'btn btn-mini btn-danger'%></td>
+		</tr>
+		<tr>
+			<td>Product #2</td>
+			<td>3</td>
+			<td>87$</td>
+			<td><%= link_to 'Clear', '#', class: 'btn btn-mini btn-danger'%></td>
+		</tr>
+	</table>
+	<h5>Total: 110$</h5>	
+</div>
