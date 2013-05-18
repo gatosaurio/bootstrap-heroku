@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def new
-  	@products = Product.all 
+  	@products = current_user.products.all 
 
   	respond_to do |format|
   		format.html # new.html.erb
