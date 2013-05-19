@@ -13,8 +13,8 @@ class CustomersController < ApplicationController
   def create
   	@customer = current_user.customers.build(params[:customer])
   	if @customer.save
-  		flash[:success] = "Cliente Creado"
-  		redirect_to @customer
+  		flash[:notice] = "Customer Created"
+  		redirect_to customers_path
   	else
   		render 'new'
   	end
@@ -32,7 +32,7 @@ class CustomersController < ApplicationController
   	@customer = current_user.customers.find(params[:id])
   	if 
   		@customer.update_attributes(params[:customer])
-  		flash[:success] = "Cliente Modificado"
+  		flash[:notice] = "Customer Edited"
   		redirect_to customer_path
   	else
   		render 'edit'
@@ -41,7 +41,7 @@ class CustomersController < ApplicationController
 
   def destroy
   	@customer = current_user.customers.find(params[:id]).destroy
-  	redirect_to root_url, :notice => 'Cliente Eliminado'
+  	redirect_to root_url, :notice => 'Customer Deleted'
   end
 
   def search

@@ -6,5 +6,7 @@ class OrdersController < ApplicationController
   		format.html # new.html.erb
   		format.json {render json: @products}
   	end
+
+  
   end
 end

@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
   	@product = current_user.products.find(params[:id])
   	if 
   		@product.update_attributes(params[:product])
-  		flash[:success] = "Producto Editado"
+  		flash[:notice] = "Product Edited"
   		redirect_to product_path
   	else
   		render 'edit'
